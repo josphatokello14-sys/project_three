@@ -1,11 +1,10 @@
 {
-    "name": "Mni Project App",
+    "name": "Mini Project App",
     "short_name": "MiniApp",
-    "start_url": "./index.html",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#2196f3",
-    "description": "A simple one page project app.",
     "icons": [
         {
             "src": "icon-192.png",
