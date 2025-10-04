@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mini projects App</title>
+        <style>
+            .screen{display:none;
+            }
+            .active{display:block;}
+            body{
+                 background-color:rgb(146, 144, 144);
+            }
+            #menu {
+                background-color:rgb(146, 144, 144);
+            }
+            .background {
+                text-align: center;
+                padding: 2rem 1rem;
+                z-index:1;
+                pointer-events: none;
+                color:rgba(5, 5, 5, 0.459);
+            }
+            .heading1, .heading2 {
+                margin: 0.5rem 0;
+                font-size: 2rem;
+            }
+            .foreground {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                margin: 2rem 0;
+                z-index: 2;
+            }
+            .foreground button {
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: white;
+                background: brown;
+                border-radius: 5px;
+                transition: background 0.2s;
+                width: 90%;
+                max-width: 400px;
+                text-align: center;
+            }
+            .foreground button:hover {
+                background:rgb(201, 127, 127);
+            }
+            #age {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color:rgb(221, 238, 245);
+            }
+            .headage{
+                text-align: center;
+                margin: 0.5rem 0;
+                font-size: 2rem;
+            }
+            .center{
+                position: relative;
+                margin:auto;
+                border: solid black 2px;
+                width:90%;
+                text-align: center;
+                background-color:lightblue;
+            }
+            .link{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+            .link button{
+                border:solid brown 2px;
+                padding:0.5rem;
+                background-color: brown;
+                color:white;
+                text-decoration: none;
+                border-radius:5px;
+                font-size: 1.2rem;
+                width:50%;
+                max-width:400px;
+            }
+            #btn{
+                background:rgb(240, 238, 238);
+                color:red;
+                font-weight: 900;
+                margin:3rem 3rem;
+            }
+                        .title{
+                margin-bottom: 2rem;
+            }
+            .des{
+                font-size:1rem;
+                margin-top:7rem;
+            }
+            #grade {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: rgb(253, 146, 146);
+            }
+           .gradebox {
+                border:solid black 2px;
+                margin:auto;
+                text-align: center;
+                background-color: rgb(245, 113, 113);
+                width:90%;
+                
+            }
+            .con{
+                text-align:center;
+                margin-bottom:3rem;
+                font-size:2rem;
+            }
+            input{
+                height:2rem ;
+                position:relative;
+                margin-right:1rem;
+            }
+           #graderesult {
+               border:solid black 2px;
+               padding:1rem 1rem 1rem 1rem;
+               font-size:2rem;
+               margin-left: 1rem;
+               color:blue;
+               font-weight:900;
+               background-color: yellow;
+            }
+            #gradeconvertbutton{
+               position:relative;
+               height:4rem;
+               width:10rem;
+               border-radius:15px;
+               background-color:red;
+               margin-bottom: 2rem;
+            }
+            #comment{
+              position:relative;
+              font-style:italic ;
+              color:green;
+              font-size: 2rem;
+            }
+            .last button{
+              border:solid brown 2px;
+              padding:0.5rem;
+              background-color: brown;
+              color:white;
+              text-decoration: none;
+              border-radius:5px;
+              font-size: 1.2rem;
+              width:50%;
+              max-width:400px;
+            }
+            .last{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+            img{
+                width:12rem;
+            }
+            .probox {
+               border:solid black 2px;
+               width:90%;
+               position:relative;
+               text-align: center;
+               background-color: rgb(235, 185, 235);
+               margin:auto;
+            }
+            #descbutton{
+               height: 30px;
+               border-radius:5px;
+               color:blue;
+               background-color: red;
+               font-weight: 900;
+            }
+
+            #temp p{
+               font-style: italic;
+               font-size: 2rem;
+            }
+            #temp{
+              margin:0;
+              background-color: rgb(233, 197, 233);
+            }
+            .headtemp{
+              text-align: center;
+              margin-bottom: 5rem;
+            }
+            .linkk{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 1rem;
+              margin: 2rem 0;
+            }          
+            .linkk button{
+              border:solid brown 2px;
+              padding:0.5rem;
+              background-color: brown;
+              color:white;
+              text-decoration: none;
+              border-radius:5px;
+              font-size: 1.2rem;
+              width:50%;
+              max-width:400px;
+            }
+
+            @media (min-width: 600px) {
+              .linkk {
+                  flex-direction: row;
+                  justify-content: center;
+            }
+              .linkk button{
+                  width: auto;
+                  max-width: none;
+            }
+            }
+            @media (max-width: 400px) {
+              .headtemp{
+                  font-size: 1rem;
+            }
+              .linkk button {
+                  font-size: 1rem;
+                  padding: 0.7rem 1rem;
+            }
+              #text{
+                  font-size:1rem;
+                  margin-top:5rem;
+            }
+             .head2{
+                 font-size:1rem;
+                 margin-bottom: 2rem;
+            }
+            }
+    
+            @media (min-width: 600px) {
+                .last {
+                    flex-direction: row;
+                    justify-content: center;
+                }
+                .last button {
+                    width: auto;
+                    max-width: none;
+                }
+            }
+            @media (max-width: 500px) {
+                .con{
+                    font-size: 1rem;
+                }
+                .last button {
+                    font-size: 1rem;
+                    padding: 0.7rem 1rem;
+                }
+                .title{
+                    font-size:1rem;
+                }
+                #comment{
+                    font-size: 1rem;
+                    margin:3rem 3rem;
+                }
+                #graderesult {
+                    border:solid black 2px;
+                    padding:0.8rem 0.8rem 0.8rem 0.8rem;
+                    font-size:1rem;
+                    margin-left: 0.8rem;
+                    color:blue;
+                    font-weight:900;
+                    background-color: yellow;
+                }
+            }
+            @media (max-width: 400px) {
+                .head2age{
+                    font-size: 1rem;
+                }
+                .link button {
+                    font-size: 1rem;
+                    padding: 0.7rem 1rem;
+                }
+                #ageResult{
+                    font-size:1rem;
+                }
+                .designed{
+                    font-size: 0.8rem;
+                }
+            }
+             @media (min-width: 600px) {
+                .link {
+                    flex-direction: row;
+                    justify-content: center;
+                }
+                .link button {
+                    width: auto;
+                    max-width: none;
+                }
+            }
+            #ageResult{
+                margin:5rem 5rem;
+                color:green;
+                font-weight: 900;
+            }
+            @media (min-width: 600px) {
+                .foreground {
+                    flex-direction: row;
+                    justify-content: center;
+                }
+                .foreground button {
+                    width: auto;
+                    max-width: none;
+                }
+            }
+            @media (max-width: 400px) {
+                .heading1, .heading2 {
+                    font-size: 1.2rem;
+                }
+                .foreground button {
+                    font-size: 1rem;
+                    padding: 0.7rem 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!--main menu-->
+
+    <div id="menu" class="screen active">
+       <div class="background">
+        <h1 class = "heading1">JOSPHAT OKELLO MINI-PROJECTS</h1>
+        <h1 class="heading2">MAIN MENU</h1>
+       </div>
+       <div class = "foreground">
+        <button onclick="showScreen('age')" >FINDING AGE</button>
+        <button onclick="showScreen('grade')">GRADE CONVERTER</button>
+        <button onclick="showScreen('temp')" >TEMPERATURE DESCRIPTION</button>
+       </div>
+    </div>
+
+        <!--FINING AGE-->
+   <div id="age" class="screen">
+        <h1 class="headage" >FINDING AGE</h1>
+    <div class ="center">
+        <h1 class = "head2age" style="color:blue">ENTER YOUR DATE OF BIRTH TO FIND YOUR REAL AGE.</h1>
+        <input  id = "birthYear" type="number" placeholder="date of birth here"></input><br><br><br>
+        <button  id = "btn" onclick = "calcAge()" >CLICK HERE TO SEE YOUR REAL AGE</button>
+        <h1 id = "ageResult">YOUR AGE IS-------------</h1>
+        <h1 class="designed"> <i>created and designed by Josphat Okello</i></h1>
+    </div>
+    <div class = "link">
+    <button onclick="showScreen('grade')">NEXT PROJECT</button>
+    <button onclick="showScreen('menu')">BACK TO MENU</button>
+    </div>
+   </div>
+
+      <!--GRADE CONVERTEr-->
+
+ <div id="grade" class="screen">
+        <h1 class= "con">GRADE CONVERTER</h1>
+        <div class= "gradebox">
+            <h1 class="title"> MAX TO GRADE CONVERTER</h1>
+            <br>
+            <input id = "collect" type="number" placeholder="Enter your max">
+            =       
+            <k id = "graderesult">  B+</k>
+            <p id = "comment">comment </p>
+            <button id ="gradeconvertbutton" onclick = "calcGrade()">CONVERT</button>
+            <p class = "des"><b><i>Designed and created by Josphat Okelo</i></b></p>
+        </div>
+        <div class = "last">
+            <button onclick="showScreen('temp')">NEXT PROJECT</button>
+            <button onclick="showScreen('menu')">BACK TO MENU</button>
+        </div>
+ </div>
+
+       <!--TEMPERATURE DESCRIPTION-->
+    <div id="temp" class="screen">
+        <h1 class="headtemp">TEMPERATURE DESCRIPTION</h1>
+        <div class = "probox">
+            <h1 class = "head2" >What is the temperature at your place in degrees celcius?</h1>
+            <input id ="tempinput" type="number" placeholder="Enter temperature in celcius">
+            <br><br>
+            <button onclick="calcTemp()">ENTER</button>
+            <br><br>
+            <img id= "myimage" src = "beauty.jpg">
+            <br>
+            <p id = "text" ></p>
+        </div>
+        <div class = "linkk">
+            <button onclick="showScreen('age')">NEXT PROJECT</button>
+            <button onclick="showScreen('menu')">BACK TO MENU</button>
+        </div>
+    </div>
+       
+<!--SCRIPT IS BELOW-->
+
+   <script>
+            //AGE CALCULATOR
+            function calcAge() {
+            let birthDate
+            birthDate = document.getElementById("birthYear").value
+            birthDate = parseInt(birthDate)
+            let age = 2025 - birthDate
+            document.getElementById("ageResult").innerText = `YOU ARE ${age} YEARS OLD`
+            }
+
+            //GRADE CALCULATOr
+
+function calcGrade(){
+max = document.getElementById("collect").value;
+max = Number(max);
+if(max<0){
+    document.getElementById("graderesult").innerText="invalid";
+    document.getElementById("comment").innerText = "comment";
+}
+else if(max<30){
+    document.getElementById("graderesult").innerText=" E";
+    document.getElementById("comment").innerText = "you have really failed,try to work hard and smart"
+}
+else if(max<35){
+    document.getElementById("graderesult").innerText="D-";
+    document.getElementById("comment").innerText = "you are far far behind ,work hard and smart"
+}
+else if(max<40){
+    document.getElementById("graderesult").innerText="D";
+    document.getElementById("comment").innerText = "you are far behind ,work hard and smart"
+}
+else if(max<45){
+    document.getElementById("graderesult").innerText="D+";
+    document.getElementById("comment").innerText = "you are far behind ,but still you can improve"
+}
+else if(max<50){
+    document.getElementById("graderesult").innerText="C-";
+    document.getElementById("comment").innerText = "you are far far behind ,work hard and smart"
+}
+else if(max<55){
+    document.getElementById("graderesult").innerText="C";
+    document.getElementById("comment").innerText = "you are behind, keep improving"
+}
+else if(max<60){
+    document.getElementById("graderesult").innerText="C+";
+    document.getElementById("comment").innerText = "average performance, you can do better"
+}
+else if(max<65){
+    document.getElementById("graderesult").innerText="B-";
+    document.getElementById("comment").innerText = "good effort, aim higher"
+}
+else if(max<70){
+    document.getElementById("graderesult").innerText="B";
+    document.getElementById("comment").innerText = "well done, keep it up"
+}
+else if(max<75){
+    document.getElementById("graderesult").innerText="B+";
+    document.getElementById("comment").innerText = "very good, almost excellent"
+}
+else if(max<80){
+    document.getElementById("graderesult").innerText="A-";
+    document.getElementById("comment").innerText = "great job, just a bit more for excellence";
+}
+else if(max<=100){
+    document.getElementById("graderesult").innerText="A";
+    document.getElementById("comment").innerText = "excellent work!"
+}
+else{
+    document.getElementById("graderesult").innerText="invalid";
+    document.getElementById("comment").innerText = "comment";
+}
+}
+
+           //tempdescription
+function calcTemp(){
+temp = document.getElementById("tempinput").value
+temp = Number(temp)
+if (temp < 0){
+    document.getElementById("text").innerText = "temperature is extremely cold,please stay indoors";
+    image = document.getElementById("myimage");
+    image.src = "coldertemp.jpg";
+}
+else if (temp < 15){
+    document.getElementById("text").innerText = "it is a cold temperature,wear warm clothes";
+    image = document.getElementById("myimage");
+    image.src = "coldtemp.jpg";
+}
+else if (temp < 25){
+    document.getElementById("text").innerText = "temperature is normal, enjoy your lovely day";
+    image = document.getElementById("myimage");
+    image.src = "moderatetemp.jpg";
+}
+else if (temp < 40){
+    document.getElementById("text").innerText = "it is a hot temperature,wear vests";
+    image = document.getElementById("myimage");
+    image.src = "hottemp.jpg";
+}
+else if (temp >= 40){
+    document.getElementById("text").innerText = "temperature is extremely hot,please find a colder please";
+    image = document.getElementById("myimage");
+    image.src = "hottertemp.jpg";
+}
+else{
+    image = document.getElementById("myimage");
+    image.src = "beauty.jpg"
+}
+}
+
+
+            //switch btw screens
+            function showScreen(screenId) {
+                document.querySelectorAll('.screen').forEach(div =>
+                    div.classList.remove('active'));
+                document.getElementById(screenId).classList.add('active');
+            }
+    </script>
+  </body>
+</html>
